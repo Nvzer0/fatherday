@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>父亲节快乐</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2c3e50',
+            secondary: '#e74c3c',
+            accent: '#f39c12',
+            light: '#ecf0f1',
+            dark: '#34495e'
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .transition-transform {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+      }
+      .hover-scale {
+        @apply hover:scale-105 transition-all duration-300;
+      }
+      .card-shadow {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .bg-gradient-father {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter bg-light text-dark">
+  <!-- 背景音乐 -->
+  <audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+  
+  <!-- 音乐控制按钮 -->
+  <button id="musicToggle" class="fixed bottom-5 right-5 z-50 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-dark transition-all duration-300">
+    <i class="fa fa-volume-up"></i>
+  </button>
+
+  <!-- 导航栏 -->
+  <nav class="bg-primary text-white shadow-lg fixed w-full z-40 transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="text-2xl font-bold">父亲节快乐</div>
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="hover:text-accent transition-colors duration-300">首页</a>
+        <a href="#gallery" class="hover:text-accent transition-colors duration-300">照片墙</a>
+        <a href="#quotes" class="hover:text-accent transition-colors duration-300">感恩语录</a>
+        <a href="#message" class="hover:text-accent transition-colors duration-300">给父亲的信</a>
+      </div>
+      <button class="md:hidden text-white text-xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 英雄区域 -->
+  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://picsum.photos/id/1012/1920/1080'); filter: brightness(0.6);"></div>
+    <div class="container mx-auto px-4 z-10 text-center">
+      <h1 class="text-[clamp(2.5rem,5vw,4.5rem)] font-bold text-white mb-6 text-shadow animate-fade-in">
+        感谢您，爸爸
+      </h1>
+      <p class="text-[clamp(1rem,2vw,1.5rem)] text-white mb-10 max-w-2xl mx-auto text-shadow">
+        您是我的英雄，我的导师，我的朋友。父亲节快乐！
+      </p>
+      <a href="#message" class="inline-block bg-accent hover:bg-accent/90 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+        写下您的祝福
+      </a>
+    </div>
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+      <a href="#about" class="text-3xl">
+        <i class="fa fa-angle-down"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- 关于父亲节 -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">父亲节的由来</h2>
+        <div class="w-20 h-1 bg-accent mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <h3 class="text-2xl font-semibold text-primary mb-4">父亲节的意义</h3>
+          <p class="text-gray-700 mb-6 leading-relaxed">
+            父亲节是一个向父亲表达感激和爱意的节日。这个节日起源于20世纪初的美国，如今已在全球许多国家庆祝。虽然庆祝日期和方式各不相同，但核心意义始终如一——感谢父亲为家庭和社会所做出的贡献。
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            父亲的爱是深沉而伟大的，他们用肩膀扛起家庭的责任，用行动教导我们成长。在这个特殊的日子里，让我们向父亲表达我们最深切的爱意和感激之情。
+          </p>
+        </div>
+        <div class="order-1 md:order-2 rounded-lg overflow-hidden shadow-xl hover-scale">
+          <img src="https://picsum.photos/id/1074/600/400" alt="父子亲密互动" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 照片画廊 -->
+  <section id="gallery" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">爱的回忆</h2>
+        <div class="w-20 h-1 bg-accent mx-auto"></div>
+        <p class="text-gray-700 mt-4 max-w-2xl mx-auto">
+          珍藏与父亲的每一个美好瞬间，这些回忆是最珍贵的礼物
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 照片卡片 1 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg hover-scale card-shadow">
+          <div class="h-64 overflow-hidden">
+            <img src="https://picsum.photos/id/1025/600/400" alt="父亲和孩子在公园玩耍" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-primary mb-2">童年的陪伴</h3>
+            <p class="text-gray-700">
+              公园里的追逐嬉戏，是我童年最快乐的回忆。您总是那么有耐心，陪我度过每一个美好的时光。
+            </p>
+          </div>
+        </div>
+        
+        <!-- 照片卡片 2 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg hover-scale card-shadow">
+          <div class="h-64 overflow-hidden">
+            <img src="https://picsum.photos/id/1059/600/400" alt="父亲教孩子骑自行车" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-primary mb-2">成长的导师</h3>
+            <p class="text-gray-700">
+              您教会我骑自行车，教会我面对困难不放弃。您的教导如明灯，照亮我前行的道路。
+            </p>
+          </div>
+        </div>
+        
+        <!-- 照片卡片 3 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg hover-scale card-shadow">
+          <div class="h-64 overflow-hidden">
+            <img src="https://picsum.photos/id/1060/600/400" alt="父亲和孩子在海边散步" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-primary mb-2">生活的伙伴</h3>
+            <p class="text-gray-700">
+              无论风雨还是晴天，您总是在我身边。您的陪伴让我懂得了什么是责任和爱。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 感恩语录 -->
+  <section id="quotes" class="py-20 bg-gradient-father text-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">感恩语录</h2>
+        <div class="w-20 h-1 bg-accent mx-auto"></div>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-12">
+          <!-- 语录 1 -->
+          <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg shadow-lg">
+            <div class="flex items-center mb-6">
+              <div class="text-accent text-5xl mr-4">
+                <i class="fa fa-quote-left"></i>
+              </div>
+              <div>
+                <p class="text-xl italic">
+                  父亲的德行是儿子最好的遗产。
+                </p>
+                <p class="text-accent mt-2">—— 塞万提斯</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 语录 2 -->
+          <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg shadow-lg">
+            <div class="flex items-center mb-6">
+              <div class="text-accent text-5xl mr-4">
+                <i class="fa fa-quote-left"></i>
+              </div>
+              <div>
+                <p class="text-xl italic">
+                  父亲！对上帝，我们无法找到一个比这更神圣的称呼了。
+                </p>
+                <p class="text-accent mt-2">—— 华兹华斯</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 语录 3 -->
+          <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg shadow-lg">
+            <div class="flex items-center mb-6">
+              <div class="text-accent text-5xl mr-4">
+                <i class="fa fa-quote-left"></i>
+              </div>
+              <div>
+                <p class="text-xl italic">
+                  父亲们最根本的缺点在于想要自己的孩子为自己争光。
+                </p>
+                <p class="text-accent mt-2">—— 罗素</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 给父亲的信 -->
+  <section id="message" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">给父亲的一封信</h2>
+        <div class="w-20 h-1 bg-accent mx-auto"></div>
+        <p class="text-gray-700 mt-4 max-w-2xl mx-auto">
+          写下您对父亲最想说的话，表达您深深的爱意和感激之情
+        </p>
+      </div>
+      
+      <div class="max-w-3xl mx-auto bg-gray-50 rounded-xl shadow-xl p-8">
+        <form id="messageForm" class="space-y-6">
+          <div>
+            <label for="name" class="block text-gray-700 font-medium mb-2">您的名字</label>
+            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-300" placeholder="请输入您的名字">
+          </div>
+          
+          <div>
+            <label for="message" class="block text-gray-700 font-medium mb-2">想对父亲说的话</label>
+            <textarea id="message" rows="8" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-300 resize-none" placeholder="在这里写下您对父亲最想说的话..."></textarea>
+          </div>
+          
+          <div class="text-center">
+            <button type="submit" class="bg-accent hover:bg-accent/90 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+              发送祝福
+            </button>
+          </div>
+        </form>
+        
+        <!-- 消息预览 -->
+        <div id="messagePreview" class="mt-12 hidden">
+          <div class="bg-white p-8 rounded-lg shadow-md border border-gray-200">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                <i class="fa fa-user text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-primary" id="previewName">亲爱的爸爸</h3>
+                <p class="text-gray-500 text-sm">来自 <span id="previewFrom">您的孩子</span></p>
+              </div>
+            </div>
+            <div class="border-l-4 border-accent pl-4 text-gray-700" id="previewMessage">
+              您的祝福将显示在这里...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
